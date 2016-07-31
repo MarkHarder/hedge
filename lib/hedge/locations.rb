@@ -6,7 +6,7 @@ module Hedge
       @description = description
     end
 
-    def perform( command )
+    def perform( player, command )
       if command == "look"
         puts @description
       end
