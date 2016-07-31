@@ -31,4 +31,14 @@ module Hedge
       end
     end
   end
+
+  class Forest < Location
+    def initialize
+      super( "You are deep in the forest." )
+    end
+
+    def perform( player, command )
+      super( player, command )
+    end
+  end
 end
