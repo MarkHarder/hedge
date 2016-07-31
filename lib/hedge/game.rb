@@ -19,7 +19,7 @@ module Hedge
         if command == "quit"
           exit
         else
-          @world.current_room.perform( command )
+          @world.perform( command )
         end
       end
     end

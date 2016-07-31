@@ -1,6 +1,6 @@
 module Hedge
   class Player
-    attr_reader :location
+    attr_accessor :location
 
     def initialize
       @location = :dias

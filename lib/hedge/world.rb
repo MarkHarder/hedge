@@ -12,5 +12,9 @@ module Hedge
     def current_room
       @rooms[ @player.location ]
     end
+
+    def perform( command )
+      current_room.perform( @player, command )
+    end
   end
 end
