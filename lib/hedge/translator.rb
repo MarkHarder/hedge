@@ -4,6 +4,7 @@ module Hedge
       @abbreviations = {
         "q" => "quit",
         "x" => "look at",
+        "i" => "inventory",
       }
 
       @synonyms = {
@@ -18,6 +19,10 @@ module Hedge
 
       for k, v in @synonyms
         text.gsub!( /\b#{k}\b/, v )
+      end
+
+      if text == "enter forest"
+        text = "go to forest"
       end
 
       text

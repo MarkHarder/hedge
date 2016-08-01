@@ -11,8 +11,12 @@ module Hedge
     end
 
     def run
-      puts @world.current_room.description
       loop do
+        unless @player.visited?( @player.location )
+          puts @world.current_room.description
+          @player.visit( @player.location )
+        end
+
         print "> "
         command = @translator.translate( gets.chomp )
 
