@@ -20,6 +20,10 @@ module Hedge
         text.gsub!( /\b#{k}\b/, v )
       end
 
+      if text == "enter forest"
+        text = "go to forest"
+      end
+
       text
     end
   end
