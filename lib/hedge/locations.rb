@@ -39,7 +39,7 @@ module Hedge
     def initialize
       super( "You are deep in the forest." )
 
-      @unexplored = [:bell]
+      @unexplored = [:bell, :hut]
     end
 
     def perform( player, command )
@@ -56,6 +56,12 @@ module Hedge
   class Bell < Location
     def initialize
       super( "You come to a clearing with a large bell." )
+    end
+  end
+
+  class Hut < Location
+    def initialize
+      super( "You see a small hut." )
     end
   end
 end
