@@ -28,7 +28,7 @@ module Hedge
 
     def perform( player, command )
       if command == "look at dias"
-        puts "It is a raised stone dias."
+        puts "It is a raised stone dias. Carved around the base is a series of symbols."
       elsif command == "look at forest"
         puts "They are tall and trees."
       else
@@ -49,6 +49,8 @@ module Hedge
         unless @unexplored.empty?
           player.location = @unexplored.delete( @unexplored.sample )
         end
+      elsif command == "look at forest"
+        puts "The broad leaves of the trees tower over you. The bark has a pleasant scent."
       else
         super( player, command )
       end
@@ -58,6 +60,14 @@ module Hedge
   class Bell < Location
     def initialize
       super( "You come to a clearing with a large bell." )
+    end
+
+    def perform( player, command )
+      if command == "look at bell"
+        puts "It is a small, bright bell."
+      else
+        super( player, command )
+      end
     end
   end
 
